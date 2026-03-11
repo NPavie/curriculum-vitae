@@ -69,21 +69,37 @@
 \RequirePackage{unicode-math}
 
 \newfontfamily\bodyfont
-[BoldFont=texgyreheros-bold.otf,
-ItalicFont=texgyreheros-italic.otf,
-BoldItalicFont=texgyreheros-bolditalic.otf]
-{texgyreheros-regular.otf}
-\newfontfamily\thinfont[]{Lato-Light.ttf}
-\newfontfamily\headingfont[]{texgyreheros-bold.otf}
+[BoldFont=SourceSansPro-Bold.otf,
+ItalicFont=SourceSansPro-LightIt.otf,
+BoldItalicFont=SourceSansPro-BoldIt.otf]
+{SourceSansPro-Light.otf}
+
+\newfontfamily\thinfont[]{SourceSansPro-ExtraLight.otf}
+\newfontfamily\headingfont[]{SourceSansPro-Bold.otf}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont
-[Mapping=tex-text, Color=textcolor,
-BoldFont=texgyreheros-bold.otf,
-ItalicFont=texgyreheros-italic.otf,
-BoldItalicFont=texgyreheros-bolditalic.otf
-]
-{texgyreheros-regular.otf}
+\setmainfont[Mapping=tex-text, Color=textcolor,
+BoldFont=SourceSansPro-Bold.otf,
+ItalicFont=SourceSansPro-LightIt.otf,
+BoldItalicFont=SourceSansPro-BoldIt.otf]
+{SourceSansPro-Light.otf}
+
+% \newfontfamily\bodyfont
+% [BoldFont=texgyreheros-bold.otf,
+% ItalicFont=texgyreheros-italic.otf,
+% BoldItalicFont=texgyreheros-bolditalic.otf]
+% {texgyreheros-regular.otf}
+% \newfontfamily\thinfont[]{Lato-Light.ttf}
+% \newfontfamily\headingfont[]{texgyreheros-bold.otf}
+
+% \defaultfontfeatures{Mapping=tex-text}
+% \setmainfont
+% [Mapping=tex-text, Color=textcolor,
+% BoldFont=texgyreheros-bold.otf,
+% ItalicFont=texgyreheros-italic.otf,
+% BoldItalicFont=texgyreheros-bolditalic.otf
+% ]
+% {texgyreheros-regular.otf}
 
 \setmathfont{texgyreheros-regular.otf}
 %%%
@@ -110,6 +126,25 @@ BoldItalicFont=texgyreheros-bolditalic.otf
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
       \thinfont #3%
+    };
+  \end{tikzpicture}
+  \vspace{2.5cm}
+  \vspace{-2\parskip}
+}
+
+\newcommand{\headerAndPhoto}[4]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
+    \node [anchor=center] (name) at (box) {%
+      \fontsize{40pt}{72pt}\color{header}%
+      {\thinfont #1}{\bodyfont  #2}
+    };
+    \node [anchor=north] at (name.south) {%
+      \fontsize{14pt}{24pt}\color{header}%
+      \thinfont #3%
+    };
+    \node [anchor=west] at (box.west) {%
+      \includegraphics[height=4cm]{#4}%
     };
   \end{tikzpicture}
   \vspace{2.5cm}
@@ -175,7 +210,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  \parbox[t]{2cm}{#1}&\parbox[t]{11.3cm}{%
+  \parbox[t]{2cm}{\hfill#1 \bullet}&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
@@ -195,7 +230,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1.5, 4.33)
+  \begin{textblock}{4}(1, 4.33)
   \begin{flushright}
   \obeycr
 }{%
@@ -331,7 +366,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
   \begin{refsection}
     \newrefcontext[sorting=chronological]%
     \nocite{*}
-    \printbibliography[type={#1}, title={#2}, heading=bibheading]
+    \printbibliography[type={#1}, title={#2}, heading=none]
   \end{refsection}
 }
 
@@ -346,7 +381,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=2.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=5.6cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
     colorlinks=false,       
@@ -359,3 +394,10 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 \makeatletter
 \def\HyColor@@@@UseColor#1\@nil{\addfontfeatures{Color=#1}}
 \makeatother
+
+\RequirePackage{lastpage}
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}

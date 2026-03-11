@@ -1,0 +1,290 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.0 (5/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{friggeri-cv-a4} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+
+\addbibresource{bibliography.bib} % Specify the bibliography file to include publications
+
+\begin{document}
+%\header{Nicolas}{Pavie}{Ph. D. Student in Computer Graphics} % Your name and current job title/field
+\headerAndPhoto{Nicolas}{Pavie}{Chef de projet en ingénierie logicielle}{photo_miniature_circle.png}
+
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+% Une photo ici serait cooooool
+\section{Contact}
+18 Lot. Charles Péguy
+16000, Angoulême
+~
++33 6 26 01 31 76
+\href{mailto:pavie.nicolas@gmail.com}{pavie.nicolas@gmail.com}
+~
+\href{https://github.com/NPavie}{github.com/NPavie}
+\section{Langues}
+Français : natif
+Anglais : courant
+Allemand : scolaire
+\section{Programmation}
+{\color{red} $\varheartsuit$} GLSL, C/C++/C\#, Python
+Java (+ Android)
+SQL, PHP, HTML5/CSS3/JS
+Perl, XML, XSLT, XPROC
+NASM x86
+\LaTeX
+\section{Systèmes}
+Windows (7 - 10)
+Linux (CentOS / Debian)
+MacOS X (10.11+)
+\section{Virtualisation}
+HyperV
+VirtualBox
+VMWare ESXi/vCenter
+\section{Logiciels}
+Visual Studio (2015 \& +)
+gcc / gdb
+Xcode
+Eclipse
+Android Studio
+Inkscape / GIMP
+MS Office / LibreOffice
+\section{APIs}
+Synfony / React / Redux
+Claroline Connect
+OpenGL 4.1+, OpenCL 1.2+
+Assimp, glew, glfw
+
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%   WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{expérience professionnelle}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{Mars 2019}
+{Chef de projet en ingénierie logicielle}
+{\href{https://www.braillenet.org/}{BrailleNet}, Ivry sur Seine, France}
+{
+Déploiement et administration de services en ligne : \href{https://mm.braillenet.org}{Mattermost}, \href{https://limesurvey.braillenet.org/}{Limesurvey}, \href{https://sidpt.braillenet.org}{IPIP}\\
+Gestion et réalisation de projets R\&D logiciels :\\
+- Conception d'une chaîne de pré-traitement HTML pour améliorer la lisibilité des livres PDFs générés par PrinceXML et à destination des personnes dyslexiques,\\
+- Encadrement de stage sur la création de connecteurs pour la synthèse vocale dans le logiciel \href{https://github.com/NPavie/word-save-as-daisy}{DAISY Pipeline 2},\\
+- Développement de l'\emph{addin} Microsoft Word \href{https://github.com/daisy/word-save-as-daisy}{Save As DAISY} pour la conversion de document Word vers les formats DTBook XML, DAISY book et EPUB 3,\\
+- Développement de la plateforme d'enseignement en ligne \href{https://github.com/SIDPT/Claroline}{IPIP}, basé sur l'application Claroline Connect, pour la formation à l'édition et la production de livres adaptés aux personnes dys et malvoyantes.
+}
+%------------------------------------------------
+\entry
+{2017--2019}
+{Responsable de service informatique}
+{\href{http://www.igs-cp.fr/}{IGS-CP}, Angoulême, France}
+{
+Administration de l’infrastructure informatique,\\
+Mise en place d’outils de suivi de la maintenance et des développements,\\
+Gestion et réalisation de projets R\&D informatique et impression :\\
+- Base de donnée de mesures spectrales de papiers de production\\
+- Génération de PDF imprimeur à partir d’un word stylé.
+}
+%------------------------------------------------
+\entry
+{2016 - 2017}
+{Chef de projet informatique}
+{\href{http://www.igs-cp.fr/}{IGS-CP}, Angoulême, France}
+{
+Suivi et maintenance des développements de production existants,\\
+Support matériel et logiciel pour la maintenance informatique,\\
+Support administrateur pour l’infrastructure informatique,\\
+Support technique et logiciel pour l’impression,\\
+Gestion et réalisation de projets R\&D informatique et impression :\\
+- Application d’automatisation et de contrôle d’imprimante de production\\
+- Mise en conformité des process d’impression et certification © FOGRA\\
+- Virtualisation de postes de production pour la sous-traitance\\
+- Traitements automatique d’images selon spécifications clients
+}
+%------------------------------------------------
+\entry
+{2012 - 2016}
+{Doctorat / ATER}
+{\href{http://www.xlim.fr/}{XLIM}, Limoges, France}
+{
+Thèmes de recherches : \emph{les bruits procéduraux pour la synthèse de texture, le rendu temps-réel, le rendu volumétrique basé point sur carte graphique}.\\
+Participation au développement, à la maintenance et à l’optimisation du moteur de
+rendu temps-réel GobLim du laboratoire XLIM,\\
+Portage du moteur sur système MacOS X (compatibilité OpenGL 4.1).\\
+Mise en place de scripts de déploiement du moteur pour les systèmes Windows
+(batch) et Linux (bash).\\
+Enseignements pour la Faculté des Sciences et Technologies : Langage
+Langage C, Algorithmique (C/C++), Architecture des ordinateurs (NASM) , IHM pour terminaux Android (Java), GPGPU (OpenCL), parallélisme d’applications (C Unix), pro- grammation pour système UNIX (bash / C Unix),\\
+Enseignements pour l'Institut Universitaire de Technologie au département Métier du Multimédia et d'Internet : Algorithmique (java), Traitement de l’image (photoshop / java).
+}
+%------------------------------------------------
+\entry
+{Juin 2011}
+{Développeur - 3 mois}
+{\href{http://www.igs-cp.fr/}{IGS-CP}, Angoulême, France}
+{
+Analyse du processus de production d'un livre numérique au format E-Pub, \\
+Participer à l'implantation du processus dans un ERP existant, \\
+Rédiger une documentation simplifier pour le nouveau module de l'ERP.
+}
+\end{entrylist}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\newpage
+\section{formation}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2012--2016}
+{Doctorant en Informatique Graphique}
+{\href{http://www.unilim.fr/}{Université de Limoges}, France}
+{Thèse : \emph{Génération procédurale de détails naturels pour la synthèse d'image réaliste} \\
+La demande grandissante de qualité et de complexité des scènes de végétations générées par ordinateur met en évidence de nouveaux besoins : une modélisation plus efficiente, un stockage plus efficace et des méthodes de visualisation plus rapides.
+Cette thèse tente de répondre à ces besoins en proposant une approche procédurale pour la production de phénomènes naturels stochastiques (nuages, fourrure, végétation complexe...), nécessitant une quantité de mémoire minimale tout en permettant un rendu interactif de scènes naturelles très détaillées.}
+%The increase of demanding quality and complexity of computer-generated natural sceneries raises several needs : more appropriate content authoring methods, more efficient storage and interactive display techniques. This thesis focus on answering to those needs, using procedural approaches to produce natural stochastic phenomenon (clouds, complex vegetation ..) with a low memory requirement while keeping efficient rendering of very detailed natural sceneries. }
+%------------------------------------------------
+\entry
+{2010--2012}
+{Master en Informatique Graphique}
+{\href{http://www.unilim.fr/}{Université de Limoges}, France}
+{Sujet d'étude : \emph{la génération procédurale et le rendu temps réel de champs d'herbes}}
+%------------------------------------------------
+\end{entrylist}
+
+
+%----------------------------------------------------------------------------------------
+%	COMPETENCE SECTION
+%----------------------------------------------------------------------------------------
+%\newpage
+% \section{enseignements}
+
+% \begin{entrylist}
+% %------------------------------------------------
+% \entry
+% {2015-2016}
+% {Enseignant à la Faculté des Sciences et Technologies}
+% {\href{http://www.unilim.fr/}{Université de Limoges}, France}
+% {Enseignements réalisés dans le département Informatique : \\
+% Langage C, Architecture des ordinateurs (NASM) , IHM pour terminaux Android (Java), GPGPU (OpenCL), parallélisme d'applications (C Unix), programmation pour système UNIX (bash / C Unix).
+% }
+% %------------------------------------------------
+% \entry
+% {2012-2015}
+% {Enseignant à l'Institut Universitaire de Technologie}
+% {\href{http://www.unilim.fr/}{Université de Limoges}, France}
+% {Enseignements réalisés dans le département Métier du Multimédia et d' Internet : \\
+% Algorithmique (java), Traitement de l'image (photoshop / java).
+% }
+% %------------------------------------------------
+% \entry
+% {2012-2015}
+% {Enseignant à la Faculté des Sciences et Technologies}
+% {\href{http://www.unilim.fr/}{Université de Limoges}, France}
+% { Enseignements réalisés dans le département Informatique : \\
+% Algorithmique (C/C++), Langage C, Architecture des ordinateurs (NASM), IHM pour terminaux Android (Java). 
+% }
+% \end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{communications}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{Juin 2016}
+{Présentation en conférence internationale}
+{\href{https://www.wscg.cz/}{WSCG 2016}, Pilsen, République Tchèque}
+{ Présentation de mes recherches sur l'utilisation d'un \textit{Locally Controlled Spot Noise}  pour la synthèse de texture procédurale.}
+%------------------------------------------------
+\entry
+{Avr. 2014}
+{Étudiant volontaire}
+{\href{http://eg2014.unistra.fr/}{Eurographics 2014}, Strasbourg, France}
+{Assistance à l'accueil et à l'enregistrement des participants à la conférence internationale Eurographics.}
+%------------------------------------------------
+\entry
+{Nov. 2013}
+{Assistant organisateur}
+{Les journées AFIG 2013, Limoges, France}
+{Assistance à l'accueil et l'enregistrement des participants à la conférence nationale de l'Association Française d'Informatique Graphique (AFIG).}
+%------------------------------------------------
+\entry
+{Nov. 2013}
+{Assistant organisateur}
+{Le mois de l'informatique graphique, Limoges, France}
+{Assistance à l'accueil et à l'enregistrement des participants à 4 conférences grand public sur la recherche en informatique graphique.}
+%------------------------------------------------
+\entry
+{Mar. 2013}
+{Présentation orale}
+{GTRendu, groupe de travail sur le rendu, Paris, France}
+{ Présentation de mes résultats à la communauté française des chercheurs en informatique graphique.}
+%------------------------------------------------
+\entry
+{2013--2015}
+{Trésorier de l'association $\Sigma doc X$}
+{\href{http://www.xlim.fr/}{XLIM institute}, Limoges, France}
+{Association des docteurs et doctorants du laboratoire XLIM.}
+%------------------------------------------------
+\entry
+{2012--2015}
+{Représentant des doctorants}
+{\href{http://www.unilim.fr/}{Université de Limoges}, France}
+{ Elu représentant des doctorants de Limoges pour \href{http://s2i.ed.univ-poitiers.fr/}{l'école doctorale N°521 - S2IM}.}
+%------------------------------------------------
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION - TO BE ADD LATER
+%----------------------------------------------------------------------------------------
+
+\section{publications internationales}
+
+\printbibsection{article}{article publiés}
+
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{centres d'intérêts}
+
+\textbf{professionnels:} Langages de programmation, analyse et traitement d'images, administration et virtualisation de systèmes. \\
+\textbf{personnels:} jeux-vidéos, composants informatiques, films d'animations 3D, musique.
+
+\end{document}
+
+
