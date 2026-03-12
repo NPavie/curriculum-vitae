@@ -246,11 +246,15 @@ BoldItalicFont=SourceSansPro-BoldIt.otf]
 
 \RequirePackage[backend=biber, style=verbose, maxnames=99, sorting=ydnt]{biblatex}
 
-\DeclareFieldFormat[article]{title}{#1\par}
-\DeclareFieldFormat[book]{title}{#1\par}
-\DeclareFieldFormat[inproceedings]{title}{#1\par}
-\DeclareFieldFormat[misc]{title}{#1\par}
-\DeclareFieldFormat[report]{title}{#1\par}
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}	
+
+\DeclareFieldFormat[phdthesis]{title}{\usebibmacro{string+doi}{#1}\par}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{#1}\par}
+\DeclareFieldFormat[book]{title}{\usebibmacro{string+doi}{#1}\par}
+\DeclareFieldFormat[inproceedings]{title}{\usebibmacro{string+doi}{#1}\par}
+\DeclareFieldFormat[misc]{title}{\usebibmacro{string+doi}{#1}\par}
+\DeclareFieldFormat[report]{title}{\usebibmacro{string+doi}{#1}\par}
 
 \DeclareBibliographyDriver{article}{%
   \printfield{title}%
@@ -361,6 +365,8 @@ BoldItalicFont=SourceSansPro-BoldIt.otf]
    \subsubsection*{#1}
    \markboth{#1}{#1}
 }
+
+%\DeclareFieldFormat*{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 
 \newcommand{\printbibsection}[2]{
   \begin{refsection}
