@@ -70,9 +70,9 @@
 
 \newfontfamily\bodyfont
 [BoldFont=SourceSansPro-Bold.otf,
-ItalicFont=SourceSansPro-LightIt.otf,
+ItalicFont=SourceSansPro-It.otf,
 BoldItalicFont=SourceSansPro-BoldIt.otf]
-{SourceSansPro-Light.otf}
+{SourceSansPro-Regular.otf}
 
 \newfontfamily\thinfont[]{SourceSansPro-ExtraLight.otf}
 \newfontfamily\headingfont[]{SourceSansPro-Bold.otf}
@@ -121,7 +121,7 @@ BoldItalicFont=SourceSansPro-BoldIt.otf]
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
-      {\thinfont #1}{\bodyfont  #2}
+      {\thinfont #1}{\bodyfont  \textbf{#2}}
     };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
@@ -137,7 +137,7 @@ BoldItalicFont=SourceSansPro-BoldIt.otf]
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
-      {\thinfont #1}{\bodyfont  #2}
+      {\thinfont #1}{\hspace{10pt}}{\bodyfont  #2}
     };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
